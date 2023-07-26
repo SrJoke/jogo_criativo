@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    position: relative;
+    padding-right: 100px;
+    margin-left: 20px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 20px;
+  }
+  
+  input[type="number"] {
+    width: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #tempo {
+    font-size: 30px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+  
+  button:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  .ver-resultados {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+  }
+  
+  .ver-resultados:hover {
+    background-color: #007095;
+  }
+  

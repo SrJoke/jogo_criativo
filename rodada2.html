@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Segunda Rodada</title>
+    <link rel="website icon" type="png" href="log.png">
+
+</head>
+<body>
+
+    <h1>Cronometro:</h1>
+    <p id="tempo">00:00</p>
+    <button onclick="iniciarCronometro()">Iniciar</button>
+    <button onclick="pararCronometro()">Parar</button>
+    <button onclick="reiniciarCronometro()">Reiniciar</button>
+    <button onclick="aumentarTempo(5)">+5 segundos</button>
+    <button onclick="aumentarTempo(10)">+10 segundos</button>
+    <button onclick="aumentarTempo(15)">+15 segundos</button>
+
+    <script>
+        var cronometro;
+        var tempo = 40;
+
+        function iniciarCronometro() {
+            if (!cronometro) {
+                cronometro = setInterval(atualizarTempo, 1000);
+            }
+        }
+
+        function pararCronometro() {
+            clearInterval(cronometro);
+            cronometro = null;
+        }
+
+        function reiniciarCronometro() {
+            pararCronometro();
+            tempo = 40;
+            atualizarTempo();
+        }
+
+        function aumentarTempo(segundos) {
+            tempo += segundos;
+            atualizarTempo();
+        }
+
+        function atualizarTempo() {
+            if (tempo === 0) {
+                pararCronometro();
+                return;
+            }
+
+            tempo--;
+            var minutos = Math.floor(tempo / 60);
+            var segundos = tempo % 60;
+
+            var formatoTempo = padZero(minutos) + ":" + padZero(segundos);
+            document.getElementById("tempo").textContent = formatoTempo;
+        }
+
+        function padZero(valor) {
+            return valor < 10 ? "0" + valor : valor;
+        }
+    </script>
+
+    <h1>Segunda Rodada:</h1>
+    <form action="resultado2.html" method="get">
+        <label for="v1">Grupo 1:</label>
+        <input type="number" id="v1" name="v1"><br><br>
+        
+        <label for="v2">Grupo 2:</label>
+        <input type="number" id="v2" name="v2"><br><br>
+
+        <label for="v3">Grupo 3:</label>
+        <input type="number" id="v3" name="v3"><br><br>
+
+        <label for="v4">Grupo 4:</label>
+        <input type="number" id="v4" name="v4"><br><br>
+
+        <input type="submit" class="ver-resultados" value="VER O RESULTADO SEGUNDA PARTIDA"><br><br>
+    </form>
+
+</body>
+</html>
